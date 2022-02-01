@@ -117,9 +117,9 @@ app.use(/^\/api\/1/, ensureApiKey, auth, (request, response) =>
   listener(request, response)
   .catch(error => { console.log(error) }))
 
-// API listens on port 3000
-app.listen(3000, function () {
-  console.log('Vocabulario Backend listening on port 3000')
+// API listens on configured port
+app.listen(process.env.WEB_PORT, function () {
+  console.log('Vocabulario Backend listening on port ' + process.env.WEB_PORT)
 })
 
 
