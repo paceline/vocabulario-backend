@@ -118,8 +118,9 @@ app.use(/^\/api\/1/, ensureApiKey, auth, (request, response) =>
   .catch(error => { console.log(error) }))
 
 // API listens on configured port
-app.listen(process.env.WEB_PORT, function () {
-  console.log('Vocabulario Backend listening on port ' + process.env.WEB_PORT)
+const PORT = process.env.PORT || 5000
+app.listen(PORT, function () {
+  console.log('Vocabulario Backend listening on port ' + PORT)
 })
 
 
